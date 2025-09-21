@@ -27,6 +27,9 @@ async function run() {
     const result = await db.collection("employee").insertMany(employeeData);
     console.log(`✅ ${result.insertedCount} employees inserted!`);
 
+    const employee =await employeeCollection.find().toarray();
+    console.log("emplayee:",employee)
+
   } catch (err) {
     console.error("❌ Error:", err);
   } finally {
